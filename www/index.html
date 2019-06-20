@@ -23,8 +23,8 @@
             <h1>Sunao Letter</h1>
         </div>
         <div data-role="content">
-          <img src="image/top.png" width="100%">
-          <a href="#add-page0"><img src="image/start.png" id="startbutton"></a>
+          <img src="image/top.png" width="100%" class="load">
+          <a href="#add-page0" data-transition="turn"><img src="image/start.png" id="startbutton"></a>
         </div>
     </div>
 
@@ -33,9 +33,12 @@
           QandA(cnt);
           var nextpage=cnt+1;
           if(nextpage==question.length){
-            document.write('<a href="#result-page" data-icon="arrow-r" class="ui-btn-right" data-theme="c" onClick="addlist('+cnt+')"><img src="image/next.png"></a></div></div>');
+            document.write('<a href="#result-page" onClick="addlist('+cnt+')"><img src="image/next.png"></a></div></div>');
+            /*
+            document.write('<a href="#result-page" data-icon="arrow-r" class="ui-btn-right" data-theme="c" onClick="businessletter('+cnt+')">test</a></div></div>');
+            */
             }else{
-             document.write('<a href="#add-page'+nextpage+'" data-icon="arrow-r" class="ui-btn-right" data-theme="c" onClick="next'+cnt+'()"><img src="image/next.png"></a></div></div>');
+             document.write('<a href="#add-page'+nextpage+'" data-transition="flip" onClick="next'+cnt+'()"><img src="image/next.png"></a></div></div>');
             }
             };
   </script>

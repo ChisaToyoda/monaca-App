@@ -12,10 +12,10 @@ document.write(
   '<div data-role="content"> '+
  '<img src="image/'+imagearray[cnt]+'" width="100%"><br>'+
  question[cnt]+
-//'<input id="answer'+cnt+'" type="textarea" placeholder=',defaulttxt[cnt],'><br>');
 '<textarea id="answer'+cnt+'" placeholder='+defaulttxt[cnt]+'></textarea><br>');
   };
 
+//ページ遷移for文で回したかったけど可変変数うまくいかない
 function next(cnt){
  let sended = "#answer";
  sended+=+String(cnt);
@@ -105,3 +105,12 @@ $(document).ready($(function() {
 })
 );
 
+
+function businessletter(cnt) {
+  sended = "#answer";
+  sended+=+String(cnt);
+  answerarray[cnt]=$(sended).val();
+    
+    $("#letter").append("<h3>"+answerarray[2] + "様</h3><p>いつも大変お世話になっております。</p><p>"+answerarray[4]+"、"+answerarray[1]+"のために"+answerarray[3] + "件では大変お世話になりました。</p><p>社内でもまるで"+answerarray[7]+"のようで"+answerarray[6]+" と話しております。</p><p>改めて御礼申し上げます。</p><p>これからも"+answerarray[8]+"。よろしくお願い申し上げます。</p><h3>"+answerarray[0]+"</h3>").trigger( "create" );
+    
+    };
