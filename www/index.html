@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/cssua.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.lettering.js"></script> 
+    <script type="text/javascript" src="js/jquery.textillate.js"></script>    
+    <link rel="stylesheet" href="css/animate.css">
+
+</head>
+<body>
+   
+    <div data-role="page" id="list-page">
+        <div data-role="header" data-position="fixed" data-theme="c">
+            <h1>Sunao Letter</h1>
+        </div>
+        <div data-role="content">
+          <img src="image/top.png" width="100%">
+          <a href="#add-page0"><img src="image/start.png" id="startbutton"></a>
+        </div>
+    </div>
+
+<script type="text/javascript">
+          for(cnt=0; cnt<question.length; cnt++){
+          QandA(cnt);
+          var nextpage=cnt+1;
+          if(nextpage==question.length){
+            document.write('<a href="#result-page" data-icon="arrow-r" class="ui-btn-right" data-theme="c" onClick="addlist('+cnt+')"><img src="image/next.png"></a></div></div>');
+            }else{
+             document.write('<a href="#add-page'+nextpage+'" data-icon="arrow-r" class="ui-btn-right" data-theme="c" onClick="next'+cnt+'()"><img src="image/next.png"></a></div></div>');
+            }
+            };
+  </script>
+    <div data-role="page" id="result-page">
+        <div data-role="header" data-position="fixed" data-theme="c">
+            <h1>おてがみかいたよ</h1>
+            <a href="#list-page" data-icon="back" class="ui-btn-left" onclick="resetletter()">もどる</a>
+        </div>
+        <div data-role="content" >
+          <div id="letter">
+          </div>
+        </div>
+    </div>
+</body>
+</html>
