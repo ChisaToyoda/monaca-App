@@ -71,21 +71,6 @@ function addlist(cnt) {
   sended+=+String(cnt);
   answerarray[cnt]=$(sended).val();
 
-   // $.mobile.changePage($("#result-page")); 
-   /*
-    document.write(
-       '<div data-role="header" data-position="fixed" data-theme="c">'+
-'<h1>おてがみかいたよ</h1>'+
-            '<a href="#list-page" data-icon="back" class="ui-btn-left" onclick="resetletter()">もどる</a>'+
-        '</div>'+
-        '<div data-role="content" >'+
-          '<div id="letter">'
-    );
-    
-    document.write("<h3>しんあいなる" + answerarray[2] + "へ</h3><p>いつも"+answerarray[6] +  answerarray[2]+"はまるで、</p><p>"+ answerarray[1]+"にとっては"+answerarray[7]+"みたい。</p><p>"+answerarray[7]+"をみるたびに</p><p>" +answerarray[2]+"のことを思い出すんだなあ。</p><p>"+answerarray[4]+"だって、</p><p>"+answerarray
-    [3]+"のすっごく"+answerarray[5]+"。</p><p>いつもほんとうにありがとう。</p><p>これからも"+answerarray[8]+"、だいすきだよ。</p><h3>"+answerarray[0]+"より</h3>");
-    //document.write('</div></div>');
-    */
     $("#letter").append("<div id='lettercontent' class='animated fadeInUp'><h3>しんあいなる" + answerarray[2] + "へ</h3><p>いつも"+answerarray[6] +  answerarray[2]+"はまるで、</p><p>"+ answerarray[1]+"にとっては"+answerarray[7]+"みたい。</p><p>"+answerarray[7]+"をみるたびに</p><p>" +answerarray[2]+"のことを思い出すんだなあ。</p><p>"+answerarray[4]+"だって、</p><p>"+answerarray
     [3]+"のすっごく"+answerarray[5]+"。</p><p>いつもほんとうにありがとう。</p><p>これからも"+answerarray[8]+"、だいすきだよ。</p><h3>"+answerarray[0]+"より</h3></div>").trigger( "create" );
     
@@ -95,7 +80,7 @@ function addlist(cnt) {
 function resetletter(){
 answerarray=[];
 answerarray=['なまえ','ぼく','アントワーヌ','羊の絵を書いてくれた','地球って星にいたとき','大事にするものが手に入って心があったかくなった','面白い','砂漠で迷子になったパイロット','夜空を見上げたら僕のこと思い出してほしいな'];
-$('#lettercontent').remove();
+$('#letter').empty();
 };
 
 $(document).ready($(function() {

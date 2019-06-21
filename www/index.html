@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.lettering.js"></script> 
     <script type="text/javascript" src="js/jquery.textillate.js"></script>    
+    <script src="js/snowfall.jquery.js"></script>
     <link rel="stylesheet" href="css/animate.css">
 
 </head>
@@ -33,10 +34,10 @@
           QandA(cnt);
           var nextpage=cnt+1;
           if(nextpage==question.length){
-            document.write('<a href="#result-page" onClick="addlist('+cnt+')"><img src="image/next.png"></a></div></div>');
-            /*
+            document.write('<a href="#result-page" onClick="addlist('+cnt+')"><img src="image/next.png"></a>');
+            
             document.write('<a href="#result-page" data-icon="arrow-r" class="ui-btn-right" data-theme="c" onClick="businessletter('+cnt+')">test</a></div></div>');
-            */
+            
             }else{
              document.write('<a href="#add-page'+nextpage+'" data-transition="flip" onClick="next'+cnt+'()"><img src="image/next.png"></a></div></div>');
             }

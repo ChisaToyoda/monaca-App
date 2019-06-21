@@ -35,7 +35,7 @@ textarea {
 .animated {
   animation-duration: 3s; /* アニメーションの時間 */
   animation-delay: 0.5s; /* アニメーション開始時間 */
-  /*animation-iteration-count: infinite;  アニメーションの繰り返し回数 */
+   /*animation-iteration-count: infinite; アニメーションの繰り返し回数 */
 }
 
 /* トップページのバオバブぐるぐる*/
