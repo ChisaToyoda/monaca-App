@@ -14,11 +14,27 @@
 }
 
 #letter{
-  background-color:rgba(255,180,180,0.5);
+  background-image:url("../image/letterbg.jpg");
+  background-size:185%;
   font-family: "Kokoro";
 }
 #letter p{
-  border-bottom: dotted 3px orange;
+  border-bottom: dotted 3px rgb(255, 0, 200);
+}
+/*
+#letterprev{
+  background-image:url("../image/letterbg.jpg");
+  background-size:185%;
+  font-family: "Kokoro";
+}
+*/
+#prev-page{
+  background-image:url("../image/letterbg.jpg");
+  background-size:250%;
+  font-family: "Kokoro";
+}
+#letterprev p{
+  border-bottom: dotted 3px rgb(255, 0, 200);
 }
 h3{
  box-shadow: 0px -6px 5px -5px #92FCFC inset,0px 8px 4px -8px #92FCFC;
@@ -68,4 +84,18 @@ textarea {
 @keyframes spin {
 	0% {transform: rotate(0deg);}
 	100% {transform: rotate(360deg);}
+}
+
+/*戻るボタン次へボタンなぜかJQueryMobileのクラス効かないからしょうがなくこんなふうなCSS*/
+.ui-btn-right{
+  position: absolute;
+  right:0;
+  bottom: 0;
+}
+
+
+.ui-btn-left{
+  position: absolute;
+  left:0;
+  bottom: 0;
 }

@@ -10,10 +10,9 @@
     <script src="js/cssua.min.js"></script>
     <script src="js/app.js"></script>
 
-    <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery.lettering.js"></script> 
-    <script type="text/javascript" src="js/jquery.textillate.js"></script>    
-    <script src="js/snowfall.jquery.js"></script>
+    <!--外部フォントの読み込み-->
+    <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet"> 
+    <!--ふわっと文字が出るやつ-->
     <link rel="stylesheet" href="css/animate.css">
 
 </head>
@@ -33,24 +32,46 @@
           for(cnt=0; cnt<question.length; cnt++){
           QandA(cnt);
           var nextpage=cnt+1;
+         
+          //最後の質問ページの処理を分ける
           if(nextpage==question.length){
-            document.write('<a href="#result-page" onClick="addlist('+cnt+')"><img src="image/next.png"></a>');
-            
-            document.write('<a href="#result-page" data-icon="arrow-r" class="ui-btn-right" data-theme="c" onClick="businessletter('+cnt+')">test</a></div></div>');
+             
+             document.write('<a href="#" data-rel="back" class="ui-btn-left"><img src="image/back.png"></a>');
+
+            document.write('<a href="#result-page" onClick="addlist()" class="ui-btn-right"><img src="image/next.png"></a>');
+
+
+            document.write('<a href="#result-page" data-icon="arrow-r"  data-theme="c" onClick="businessletter('+cnt+')">もしかして企業へのお礼状？</a></div></div>');
             
             }else{
-             document.write('<a href="#add-page'+nextpage+'" data-transition="flip" onClick="next'+cnt+'()"><img src="image/next.png"></a></div></div>');
+              
+             document.write('<a href="#" data-rel="back" class="ui-btn-left"><img src="image/back.png"></a>');
+
+             document.write('<a href="#add-page'+nextpage+'" data-transition="flip" onClick="next'+cnt+'()" class="ui-btn-right"><img src="image/next.png"></a></div></div>');
+             
             }
             };
   </script>
+
     <div data-role="page" id="result-page">
         <div data-role="header" data-position="fixed" data-theme="c">
             <h1>おてがみかいたよ</h1>
-            <a href="#list-page" data-icon="back" class="ui-btn-left" onclick="resetletter()">もどる</a>
+            <a href="#" data-icon="back" class="ui-btn-left" onclick="refresh()">TOP</a>
         </div>
-        <div data-role="content" >
+        <div data-role="content" >          
           <div id="letter">
-          </div>
+            <!--最後の質問ページからリンクボタンを押すとここに内容がappendされる
+            このページ表示してから前のページに戻るとバグる
+            TOPへ戻るときにhtml再読込みすることでしか解消できていない-->
+
+            </div>     
+          <a href="#prev-page" data-icon="eye" class="ui-btn">全画面表示</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="prev-page">
+        <div data-role="content" >          
+              <div id="letterprev"></div>     
         </div>
     </div>
 </body>

@@ -110,5 +110,5 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="Orientation" value="default"/>
   <preference name="SplashScreenDelay" value="1000"/>
-  <preference name="Fullscreen" value="false"/>
+  <preference name="Fullscreen" value="true"/>
 </widget>
